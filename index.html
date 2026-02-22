@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[SYSTEM_OVERRIDE]</title>
+    <style>
+        body {
+            background-color: #050505;
+            color: #00ff41; /* Matrix Green */
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .terminal {
+            width: 80%;
+            max-width: 800px;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 30px;
+            border: 1px solid #00ff41;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+            position: relative;
+        }
+
+        .terminal::before {
+            content: "ALUCARD_PROTOCOL_v1.0";
+            position: absolute;
+            top: -25px;
+            left: 10px;
+            background: #00ff41;
+            color: #000;
+            padding: 2px 10px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .glitch {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            animation: glitch 1s linear infinite;
+        }
+
+        @keyframes glitch {
+            2%, 64% { transform: translate(2px, 0) skew(0deg); }
+            4%, 60% { transform: translate(-2px, 0) skew(0deg); }
+            62% { transform: translate(0, 0) skew(5deg); }
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 20px;
+            background-color: #00ff41;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .log-line {
+            margin: 10px 0;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .error { color: #ff0000; }
+    </style>
+</head>
+<body>
+
+    <div class="terminal">
+        <div class="glitch">Access Restricted</div>
+        <hr style="border: 0.5px solid #00ff41; margin: 20px 0;">
+        <div class="log-line">Initializing connection to remote server... [OK]</div>
+        <div class="log-line">Bypassing security firewall... <span class="error">[FAILED]</span></div>
+        <div class="log-line">Attempting brute force on port 8080...</div>
+        <div class="log-line">System Status: <span style="color: yellow;">MONITORING_USER_ACTIVITY</span></div>
+        <div class="log-line">>_ Searching for entry point... <span class="cursor"></span></div>
+    </div>
+
+    </body>
+</html>
